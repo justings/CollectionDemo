@@ -1,0 +1,6 @@
+platform:ios, '7.0'
+pod 'AFNetworking', '~> 2.5.2'
+pod 'DZNEmptyDataSet', '~> 1.5.2'
+pod 'PKRevealController'
+pod 'FSCalendar', '~> 1.2.0'
+pod 'SSLunarDate'

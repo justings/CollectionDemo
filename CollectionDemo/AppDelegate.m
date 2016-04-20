@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "NotePadViewController.h"
+#import "MenuTableViewController.h"
+#import "CalendarViewController.h"
+
+#import "PKRevealController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +23,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MenuTableViewController *left = [[MenuTableViewController alloc] init];
+//    CalendarViewController *vc = [[CalendarViewController alloc] init];
+    NotePadViewController *noteVC = [[NotePadViewController alloc] init];
+    
+    UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:noteVC];
+    
+    PKRevealController *revealController = [PKRevealController revealControllerWithFrontViewController:navc leftViewController:left rightViewController:nil];
+    
+    [revealController setMinimumWidth:230 maximumWidth:300 forViewController:left];
+    
+    self.window.rootViewController = revealController;
+//    self.window.rootViewController = navc;
+    [self.window makeKeyAndVisible];
+    
+    //设置栏标题颜色
+    UINavigationBar * navBar = [[UINavigationBar alloc] init];
+    if([navBar respondsToSelector:@selector(setBarTintColor:)]){
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:42/255.f green:104/255.f blue:217/255.f alpha:1.f]];
+    }else if ([navBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+        [[UINavigationBar appearance] setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:42/255.f green:104/255.f blue:217/255.f alpha:1.f]] forBarMetrics:UIBarMetricsDefault];
+    }
+    
+    //导航栏标题颜色默认为白色
+    [UINavigationBar appearance].titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    
     return YES;
 }
 
@@ -41,5 +75,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+- (UIImage *)imageWithColor:(UIColor *)color{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
+
+
+
+
 
 @end

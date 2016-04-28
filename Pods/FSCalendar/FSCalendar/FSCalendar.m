@@ -623,28 +623,17 @@ static BOOL FSCalendarInInterfaceBuilder = NO;
 
 - (void)setCurrentPage:(NSDate *)currentPage
 {
+    [self setCurrentPage:currentPage animated:NO];
+}
+
+- (void)setCurrentPage:(NSDate *)currentPage animated:(BOOL)animated
+{
     if (![self isDateInRange:currentPage]) {
         [NSException raise:@"currentMonth out of range" format:nil];
     }
     if (![_currentPage fs_isEqualToDateForMonth:currentPage]) {
         currentPage = currentPage.fs_dateByIgnoringTimeComponents;
-        switch (_scope) {
-            case FSCalendarScopeMonth: {
-                _currentPage = currentPage.fs_firstDayOfMonth;
-                break;
-            }
-            case FSCalendarScopeWeek: {
-                _currentPage = currentPage.fs_firstDayOfWeek;
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self scrollToDate:currentPage];
-            [self currentPageDidChange];
-        });
+        [self scrollToPageForDate:currentPage animated:animated];
     }
 }
 
@@ -1132,6 +1121,9 @@ static BOOL FSCalendarInInterfaceBuilder = NO;
 
 - (void)didSelectDate:(NSDate *)date
 {
+    if (!self.allowsMultipleSelection) {
+        [_selectedDates removeAllObjects];
+    }
     if (![_selectedDates containsObject:date]) {
         [_selectedDates addObject:date];
     }

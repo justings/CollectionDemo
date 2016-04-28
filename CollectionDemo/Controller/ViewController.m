@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MyCollectionViewCell.h"
 #import "NotePadViewController.h"
+#import <AFNetworking.h>
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -79,6 +80,54 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"click %ld", (long)indexPath.row);
+    
+    if (indexPath.row == 0) {
+        //AFNetworking POST 请求
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        
+        // 设置超时时间
+        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+        manager.requestSerializer.timeoutInterval = 10.f;
+        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+        
+        
+        NSString *urlStr = @"http://jd.vsa.com.cn/phoneNavigateManage_queryToJson.shtml";
+//        urlStr = @"http://121.46.2.233:9080/myJson/banners";
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"merchantName", @"JD_android_client",@"sign", @"F74591AE9B76FB18409F8811D6BCDC6A", nil];
+        
+        [manager POST:urlStr parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            // 请求成功，解析数据
+//            NSLog(@"%@", responseObject);
+            
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+            
+            NSLog(@"%@", dic);
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            // 请求失败
+            NSLog(@"%@", [error localizedDescription]);
+            
+        }];
+    }
+    else if (indexPath.row == 1) {
+        //AFNetworking GET 请求
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        [manager GET:@"" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        }
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 NSLog(@"这里打印请求成功要做的事");
+             }
+             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+                 NSLog(@"%@",error);  //这里打印错误信息
+             }];
+    }
+    
+    
     [self.revealController showViewController:self.revealController.frontViewController];
 }
 

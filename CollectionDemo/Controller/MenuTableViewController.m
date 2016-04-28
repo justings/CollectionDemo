@@ -11,10 +11,13 @@
 #import "NotePadViewController.h"
 #import "CalculatorViewController.h"
 #import "CalendarViewController.h"
+#import "HandlePitureViewController.h"
 
 @interface MenuTableViewController ()
 
 @property (nonatomic, strong) NSArray *menuArray;
+
+@property (nonatomic, strong) UIImageView *topView;
 
 @end
 
@@ -24,7 +27,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithRed:42/255.f green:110/255.f blue:180/255.f alpha:1.f]; //[UIColor colorWithRed:219/255.f green:185/255.f blue:124/255.f alpha:1.f];
-    self.tableView.tableFooterView = [UIView new];
+    self.tableView.tableFooterView = [UIView new]; //防止下面的部分出现分割线
+    
     
     [self initData];
 }
@@ -104,6 +108,11 @@
     else if (indexPath.row == 4) {
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
         self.revealController.frontViewController = nav;
+        [self.revealController showViewController:self.revealController.frontViewController];
+    }
+    else if (indexPath.row == 5) {
+        HandlePitureViewController *vc = [[HandlePitureViewController alloc] init];
+        self.revealController.frontViewController = vc;
         [self.revealController showViewController:self.revealController.frontViewController];
     }
     

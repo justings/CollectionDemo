@@ -34,6 +34,11 @@
 		C4803E9F1B7097C7001F7A3D /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4803E9D1B7097C7001F7A3D /* bg1.jpg */; };
 		C4803EA11B709A9B001F7A3D /* btn_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4803EA01B709A9B001F7A3D /* btn_menu@2x.png */; };
 		C743A82C6DAB273976B4903F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE69C901EDA9C9F12152195 /* libPods.a */; };
+		E7C1673E1CD1B93E00C33A38 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C1673D1CD1B93E00C33A38 /* 1.png */; };
+		E7C167401CD1BA4200C33A38 /* mybg.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C1673F1CD1BA4200C33A38 /* mybg.png */; };
+		E7C167421CD2053200C33A38 /* bb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7C167411CD2053200C33A38 /* bb.jpg */; };
+		E7C167441CD20D9C00C33A38 /* setting_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C167431CD20D9C00C33A38 /* setting_up@2x.png */; };
+		E7D755E91CD0C43700F48FFD /* HandlePitureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D755E81CD0C43700F48FFD /* HandlePitureViewController.m */; };
 		E7E05E081C5076860031EB17 /* btn_add.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E05E061C5076860031EB17 /* btn_add.png */; };
 		E7E05E091C5076860031EB17 /* btn_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E05E071C5076860031EB17 /* btn_add@2x.png */; };
 		E7E05E0B1C5079350031EB17 /* product_btn_add.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E05E0A1C5079350031EB17 /* product_btn_add.png */; };
@@ -98,6 +103,12 @@
 		C4803E9D1B7097C7001F7A3D /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		C4803EA01B709A9B001F7A3D /* btn_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_menu@2x.png"; sourceTree = "<group>"; };
 		DDE69C901EDA9C9F12152195 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C1673D1CD1B93E00C33A38 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E7C1673F1CD1BA4200C33A38 /* mybg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mybg.png; sourceTree = "<group>"; };
+		E7C167411CD2053200C33A38 /* bb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bb.jpg; sourceTree = "<group>"; };
+		E7C167431CD20D9C00C33A38 /* setting_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_up@2x.png"; sourceTree = "<group>"; };
+		E7D755E71CD0C43700F48FFD /* HandlePitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandlePitureViewController.h; sourceTree = "<group>"; };
+		E7D755E81CD0C43700F48FFD /* HandlePitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandlePitureViewController.m; sourceTree = "<group>"; };
 		E7E05E061C5076860031EB17 /* btn_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_add.png; sourceTree = "<group>"; };
 		E7E05E071C5076860031EB17 /* btn_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_add@2x.png"; sourceTree = "<group>"; };
 		E7E05E0A1C5079350031EB17 /* product_btn_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_btn_add.png; sourceTree = "<group>"; };
@@ -143,6 +154,10 @@
 		C41198BD1B68AFD200306C84 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				E7C167431CD20D9C00C33A38 /* setting_up@2x.png */,
+				E7C167411CD2053200C33A38 /* bb.jpg */,
+				E7C1673F1CD1BA4200C33A38 /* mybg.png */,
+				E7C1673D1CD1B93E00C33A38 /* 1.png */,
 				E7E05E0C1C507BA40031EB17 /* button_add@2x.png */,
 				E7E05E0A1C5079350031EB17 /* product_btn_add.png */,
 				E7E05E061C5076860031EB17 /* btn_add.png */,
@@ -164,6 +179,7 @@
 		C4675F431BA019D600393BE7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7D755E61CD0C41F00F48FFD /* picture */,
 				C4675F581BA01A5E00393BE7 /* calendar */,
 				C4675F491BA019D600393BE7 /* notePad */,
 				C4675F441BA019D600393BE7 /* calculator */,
@@ -300,6 +316,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E7D755E61CD0C41F00F48FFD /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				E7D755E71CD0C43700F48FFD /* HandlePitureViewController.h */,
+				E7D755E81CD0C43700F48FFD /* HandlePitureViewController.m */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +337,7 @@
 				C46CBA5B1ADF5EE400FBC107 /* Frameworks */,
 				C46CBA5C1ADF5EE400FBC107 /* Resources */,
 				FBF62CD90B70C3B6195DBF2F /* Copy Pods Resources */,
+				5B229A1730AF484EC103A4D6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,6 +409,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C476DE1B1B7AF40D00EE57F9 /* btn_back@2x.png in Resources */,
+				E7C1673E1CD1B93E00C33A38 /* 1.png in Resources */,
+				E7C167401CD1BA4200C33A38 /* mybg.png in Resources */,
 				E7E05E091C5076860031EB17 /* btn_add@2x.png in Resources */,
 				E7E05E0D1C507BA40031EB17 /* button_add@2x.png in Resources */,
 				C4803E9E1B7097C7001F7A3D /* bg@2x.jpeg in Resources */,
@@ -392,11 +420,13 @@
 				C46F2F711B6B697100D40122 /* head.png in Resources */,
 				E7E05E0B1C5079350031EB17 /* product_btn_add.png in Resources */,
 				C42323DA1B73ACDD004602C3 /* btn_bg.png in Resources */,
+				E7C167441CD20D9C00C33A38 /* setting_up@2x.png in Resources */,
 				C41198C11B68B1D300306C84 /* emptys.png in Resources */,
 				C4803E9F1B7097C7001F7A3D /* bg1.jpg in Resources */,
 				C43A388D1B711305002C3943 /* btn_bg.jpg in Resources */,
 				C46CBA6F1ADF5EE400FBC107 /* Images.xcassets in Resources */,
 				C4803EA11B709A9B001F7A3D /* btn_menu@2x.png in Resources */,
+				E7C167421CD2053200C33A38 /* bb.jpg in Resources */,
 				C43A388F1B711BD0002C3943 /* bg2@2x.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +454,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5B229A1730AF484EC103A4D6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBF62CD90B70C3B6195DBF2F /* Copy Pods Resources */ = {
@@ -457,6 +502,7 @@
 				C4675F571BA019D600393BE7 /* ViewController.m in Sources */,
 				C476DE231B7B28B100EE57F9 /* MyCollectionViewCell.m in Sources */,
 				C4675F541BA019D600393BE7 /* NotePadViewController.m in Sources */,
+				E7D755E91CD0C43700F48FFD /* HandlePitureViewController.m in Sources */,
 				C476DE1F1B7B223900EE57F9 /* Note.m in Sources */,
 				C4675F531BA019D600393BE7 /* MenuTableViewController.m in Sources */,
 				C46CBA641ADF5EE400FBC107 /* main.m in Sources */,

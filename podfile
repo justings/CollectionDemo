@@ -1,5 +1,5 @@
 platform:ios, '7.0'
-pod 'AFNetworking', '~> 2.5.2'
+pod 'AFNetworking', '~> 3.0.4'
 pod 'DZNEmptyDataSet', '~> 1.5.2'
 pod 'PKRevealController'
 pod 'FSCalendar', '~> 1.2.0'

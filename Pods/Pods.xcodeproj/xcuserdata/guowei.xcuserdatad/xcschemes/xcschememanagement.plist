@@ -6,63 +6,63 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FSCalendar.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>PKRevealController.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SSLunarDate.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>63F53BE219A981265ECA837676F7B3E7</key>
+		<key>419D3A1FDE346079C7B25CD8F19D8B86</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D33512111395CD98146B2ADF09368A0</key>
+		<key>736E57AD5AEFAAF68D47AE4E8FCB8F68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>948D61258B64DC31223132CE062407D6</key>
+		<key>90DF39BD8253B6868D822165810D4715</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A83E3A52D39C4A1C6D9942605C373DA4</key>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9F605E3ED233BEF81CF86404E7710D2</key>
+		<key>C2CF93A7A6917B1484E97CFEEADC8A57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E099AE150F6DFFFE9A1EEC85B975A457</key>
+		<key>E86B23E2D7A4FC646398C771B94607AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
